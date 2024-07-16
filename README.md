@@ -19,7 +19,7 @@ We use a monitoring system that, among other things, tracks how much swap is use
 
 - on most VMs we really don't have swap setup. First of all, because if a VM is swapping, the performance is seriously compromised. In the same vein, the Kubernetes project recommends disabling swap on the VMs used in a Kubernetes cluster
 - the problem with these VMs where we don't have swap setup is that the monitoring system sends an alarm like "swap unknown", but more about that at the end
-- LOAD average monitoring is a good enough indication that something is wrong on a VM and needs to be investigated. It could be the intensive use of swap or something else that will increase the LOAD average.
+- [LOAD average](https://en.wikipedia.org/wiki/Load_(computing)) monitoring is a good enough indication that something is wrong on a VM and needs to be investigated. It could be the intensive use of swap or something else that will increase the LOAD average.
 
 ## Swap commands
 
@@ -57,10 +57,6 @@ swapon /swapfile      # activate swap
 This is a partial screenshot of the `top` command on Linux:
 
 ![Screenshot top](Screenshot-top-swap.png)
-
-Am marcat cu rosu doua zone de interes:
-- in partea unde scrie *MiB Swap:* - este self-explanatory, cati MB se Swap avem in total, liberi si folositi. In acest caz particular, masina nu are swap.
-- mai interesant, zona unde scrie *0.0 wa* - inseamna cat procent CPU este in starea "wait for I/O", adica procesorul asteapta dupa operatii de I/O, in mod usual disk. Asta nu este neaparat swap, poate fi activitate intensa de scriere/citire pe disk. Dar poate fi si swap
 
 I marked in red two areas of interest:
 - the part *MiB Swap:* - it is self-explanatory, how many Swap MB we have in total, free and used. In this particular case, this VM does not have swap.
