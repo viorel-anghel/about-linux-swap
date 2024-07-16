@@ -85,6 +85,8 @@ which means that it shows periodically, every 1 second, the information:
 
 Obviously, for what we were discussing, the *swap* column is of interest. *si* means *swap in*, i.e. blocks transferred from memory to disk. *so* means *swap out*, i.e. blocks brought from disk (swap) into memory to be used.
 
+If you're curious, the next two columns shows *io/bi bo* are disk blocks in / out, i.e write/read on disks.
+ 
 On a system that is swapping, the rate of change over time in *so* is the important parameter to follow, with the idea that swap-in is not serious as long as there is not much swap-out.
 
 For the other numbers and information from the screenshot above, I hope you already know, `man vmstat`. Some parameters are the same as at the top (cpu / us sy id wa st).
