@@ -1,6 +1,4 @@
 
-# WIP work in progress
-
 # About Linux swap
 
 This is an introductory article on the topic of swap with some applications on Linux operating system.
@@ -75,7 +73,7 @@ In short, they are percentages of the time used by the processor for:
 
 How can we know all this? Simple, `man top`. The ones I look at first are `id`le and `wa`it.
 
-# Using vmstat to see swap usage
+# Using vmstat to see swap activity
 
 Until now, we do not have a command that clearly indicates if there is a write / read activity on the swap. 
 The one I use frequently is `vmstat' with the arguments `-n 1', 
@@ -112,7 +110,7 @@ sysctl vm.swappiness=10          # another way to set the value to 10
 As a side note, you don't need to reboot or restart nothing after a change in `/proc/sys` or `sysctl`, 
 those values will be noticed by the kernel on-the-fly.
 
-## Monitorizare Nagios check-swap
+## Nagios check-swap
 
 The Nagios monitoring system has a plugin `check_swap`, usually at `/usr/lib/nagios/plugins/check_swap`. 
 
